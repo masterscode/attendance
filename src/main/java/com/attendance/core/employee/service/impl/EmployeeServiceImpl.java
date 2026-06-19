@@ -43,7 +43,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     @Transactional
-//    @CacheEvict(key = "#employeeId", value = "employee-info")
     public EmployeeResponse updateEmployee(UUID employeeId, UpdateEmployeeRequest request) {
         final Employee employee = getEmployeeEntity(employeeId);
 
@@ -57,7 +56,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     @Transactional(readOnly = true)
-//    @Cacheable(key = "#id", value = "employee-info")
     public EmployeeResponse getEmployeeInfo(UUID id) {
         return EmployeeResponse.from(this.getEmployeeEntity(id));
     }

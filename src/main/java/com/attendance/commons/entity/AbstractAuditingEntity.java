@@ -10,6 +10,7 @@ import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Version;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -36,8 +37,9 @@ import java.util.UUID;
 public abstract class AbstractAuditingEntity implements Serializable {
 
     @Id
+    @Builder.Default
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private UUID id = UUID.randomUUID();
 
     @CreatedBy
     @Column(name = "created_by", nullable = false, updatable = false, columnDefinition = "UUID")

@@ -1,26 +1,27 @@
-.PHONY: all build clean start-java start-jar stop-jar restart-jar start-docker stop-containers rebuild-docker
-
-all: build
-
 build:
-	./mvnw clean install
+	docker compose build
 
-start-java: build
-	./mvnw spring-boot:run
-
-
-start-docker:
+start:
 	docker compose up -d
 
-start: start-docker
-
-stop-containers:
+stop:
 	docker compose down
 
-rebuild-docker: stop-containers
-	docker-compose build --no-cache
-	docker-compose up -d
+rebuild:
+	docker compose build --no-cache
+	docker compose up -d
+
+run:
+	./mvnw spring-boot:run
+
+package:
+	./mvnw clean package
 
 clean:
 	./mvnw clean
-	rm -f target/*.jar
+
+test-db:
+	docker compose up -d postgres
+
+start-containers:
+	docker compose up -d postgres redis
