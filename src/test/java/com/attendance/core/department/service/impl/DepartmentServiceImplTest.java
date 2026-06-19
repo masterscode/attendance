@@ -46,10 +46,10 @@ class DepartmentServiceImplTest {
 
     @Test
     void getAllDepartments_shouldReturnOnlyPersistedDepartments() {
-        var cache = cacheManager.getCache("departments");
-        assert cache != null;
-//        cache.clear();
-        System.out.println(cache);
+//        var cache = cacheManager.getCache("departments");
+//        assert cache != null;
+////        cache.clear();
+
         List<DepartmentResponse> response =  departmentService.getAllDepartments();
         Assertions.assertThat(response).isNotNull();
 
