@@ -307,11 +307,8 @@ The following assumptions were made during implementation:
 If this project were to evolve further, the following enhancements could be added:
 
 * Authentication & Authorization (JWT/OAuth2)
-* Pagination and Sorting
-* Comprehensive Unit Tests
-* Integration Tests
 * API Rate Limiting
-* Metrics and Monitoring (Micrometer + Prometheus)
+* Metrics and Monitoring (OpenTelementary)
 * CI/CD Pipeline
 * Audit Logging
 * Event-Driven Notifications
