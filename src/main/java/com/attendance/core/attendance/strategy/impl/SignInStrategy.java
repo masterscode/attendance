@@ -34,6 +34,6 @@ public class SignInStrategy implements AttendanceStrategy {
             );
         }
 
-        return AttendanceFactory.create(employee, AttendanceAction.SIGN_IN, notes);
+        return AttendanceFactory.create(employee, AttendanceAction.SIGN_IN, date, notes);
     }
 }

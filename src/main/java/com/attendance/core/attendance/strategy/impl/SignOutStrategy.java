@@ -39,6 +39,6 @@ public class SignOutStrategy implements AttendanceStrategy {
             );
         }
 
-        return AttendanceFactory.create(employee, AttendanceAction.SIGN_OUT, notes);
+        return AttendanceFactory.create(employee, AttendanceAction.SIGN_OUT, date, notes);
     }
 }

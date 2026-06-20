@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AttendanceFactory {
 
-    public  static AttendanceRecord create(Employee employee, AttendanceAction action, String note) {
+    public  static AttendanceRecord create(Employee employee, AttendanceAction action, LocalDate date, String note) {
 
         return AttendanceRecord.builder()
                 .employee(Subject.builder()
@@ -22,7 +22,7 @@ public class AttendanceFactory {
                 )
                 .action(action)
                 .note(note)
-                .date(LocalDate.now())
+                .date(date)
                 .build();
     }
 }

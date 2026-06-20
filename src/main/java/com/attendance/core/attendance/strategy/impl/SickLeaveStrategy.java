@@ -33,6 +33,6 @@ public class SickLeaveStrategy implements AttendanceStrategy {
             );
         }
 
-        return AttendanceFactory.create(employee, AttendanceAction.SICK_LEAVE, notes);
+        return AttendanceFactory.create(employee, AttendanceAction.SICK_LEAVE, date, notes);
     }
 }

@@ -35,7 +35,7 @@ public class AbsentStrategy implements AttendanceStrategy {
         }
 
         return AttendanceFactory
-                    .create(employee, AttendanceAction.ABSENT, notes);
+                    .create(employee, AttendanceAction.ABSENT, date, notes);
 
     }
 }

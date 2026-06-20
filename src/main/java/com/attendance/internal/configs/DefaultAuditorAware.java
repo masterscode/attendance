@@ -15,7 +15,6 @@ public class DefaultAuditorAware implements AuditorAware<UUID> {
     @Override
     @NullMarked
     public Optional<UUID> getCurrentAuditor() {
-        System.out.println("--> intended id to use" + SYSTEM_UUID);
         return Optional.of(SYSTEM_UUID);
     }
 }
