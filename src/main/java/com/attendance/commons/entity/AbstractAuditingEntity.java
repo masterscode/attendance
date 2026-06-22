@@ -37,9 +37,8 @@ import java.util.UUID;
 public abstract class AbstractAuditingEntity implements Serializable {
 
     @Id
-    @Builder.Default
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id = UUID.randomUUID();
+    private UUID id;
 
     @CreatedBy
     @Column(name = "created_by", nullable = false, updatable = false, columnDefinition = "UUID")
